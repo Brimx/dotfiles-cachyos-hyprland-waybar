@@ -4,71 +4,150 @@
     font-family: "JetBrainsMono Nerd Font", sans-serif;
     font-size: 14px;
     min-height: 0;
+    border: none;
+    border-radius: 0;
 }
 
 window#waybar {
-    background: alpha(@background, 0.6);
+    background: alpha(@background, 0.5);
     color: @foreground;
-    border-radius: 12px;
-    margin: 6px 10px;
+    border-radius: 16px;
+    margin: 8px 12px;
+    padding: 0 8px;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
+window#waybar.hidden {
+    opacity: 0;
+}
+
+#workspaces {
+    margin: 0 2px;
+}
+
 #workspaces button {
-    padding: 0 8px;
+    padding: 0 6px;
+    margin: 4px 1px;
+    color: alpha(@foreground, 0.25);
+    background: transparent;
+    border-radius: 8px;
+    font-size: 12px;
+    transition: all 0.2s ease;
+    min-width: 18px;
+}
+
+#workspaces button:hover {
     color: @foreground;
+    background: alpha(@foreground, 0.08);
 }
 
 #workspaces button.active {
     color: @accent;
+    background: alpha(@accent, 0.15);
 }
 
-#clock, #pulseaudio, #network, #bluetooth, #backlight, #battery, #tray,
-#cpu, #memory, #temperature, #custom-asus-profile, #custom-asus-power,
-#custom-power {
+#workspaces button.empty {
+    color: alpha(@foreground, 0.1);
+}
+
+#workspaces button.urgent {
+    color: #f38ba8;
+}
+
+#clock {
+    padding: 0 14px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+#mpris {
     padding: 0 10px;
-    color: @foreground;
+    font-size: 12px;
+    color: alpha(@foreground, 0.7);
 }
 
-#custom-power:hover {
-    color: @color1;
+#group-audio, #group-network, #group-system {
+    background: alpha(@background, 0.3);
+    border-radius: 10px;
+    margin: 4px 2px;
+    padding: 0 2px;
 }
 
-#custom-waypaper {
+#pulseaudio, #backlight, #network, #bluetooth, #cpu, #memory {
+    padding: 0 8px;
+    margin: 0;
+    border-radius: 0;
+    transition: all 0.2s ease;
+}
+
+#pulseaudio:hover, #backlight:hover, #network:hover, #bluetooth:hover,
+#cpu:hover, #memory:hover {
+    background: alpha(@foreground, 0.06);
+}
+
+#pulseaudio {
+    padding-left: 10px;
+}
+
+#backlight {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+#network {
+    border-radius: 10px 0 0 10px;
+    padding-left: 10px;
+}
+
+#bluetooth {
+    border-radius: 0 10px 10px 0;
+    padding-right: 10px;
+}
+
+#battery {
     padding: 0 10px;
-    font-size: 16px;
+    margin: 4px 0;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+#battery:hover {
+    background: alpha(@foreground, 0.06);
 }
 
 #battery.warning {
-    color: @color1;
+    color: #f9e2af;
 }
 
 #temperature.critical {
     color: #f38ba8;
 }
 
-#custom-asus-profile.quiet {
-    color: #a6e3a1;
+#tray {
+    padding: 0 6px;
+    margin: 4px 0;
+    border-radius: 8px;
 }
 
-#custom-asus-profile.balanced {
-    color: #f9e2af;
+#custom-power {
+    padding: 0 8px;
+    margin: 4px 0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.2s ease;
 }
 
-#custom-asus-profile.performance {
+#custom-power:hover {
+    background: alpha(@foreground, 0.06);
     color: #f38ba8;
 }
 
-#custom-asus-power.ac {
-    color: @accent;
-}
-
-#custom-asus-power.battery {
+tooltip {
+    background: alpha(@background, 0.9);
+    border: 1px solid alpha(@foreground, 0.1);
+    border-radius: 10px;
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
+    font-size: 13px;
     color: @foreground;
-}
-
-#mpris {
-	padding: 0 10px;
-	color: @foreground;
-	font-size: 13px;
+    padding: 8px 12px;
 }

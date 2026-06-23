@@ -11,22 +11,22 @@
         "mpris"
     ],
     "modules-right": [
-        "custom/asus-profile",
-        "pulseaudio",
-        "network",
-        "bluetooth",
+        "group/audio",
         "backlight",
-        "cpu",
-        "memory",
-        "temperature",
-        "custom/asus-power",
+        "group/network",
+        "group/system",
         "battery",
         "tray",
-        "custom/waypaper",
         "custom/power"
     ],
     "hyprland/workspaces": {
-        "format": "{icon}"
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": []
+        }
     },
     "clock": {
         "format": "{:%H:%M  %d/%m/%Y}",
@@ -45,8 +45,11 @@
         "on-scroll-up": "playerctl next",
         "on-scroll-down": "playerctl previous"
     },
-    "tray": {
-        "spacing": 10
+    "group/audio": {
+        "orientation": "horizontal",
+        "modules": [
+            "pulseaudio"
+        ]
     },
     "pulseaudio": {
         "format": "{icon}",
@@ -61,24 +64,39 @@
         "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
         "scroll-step": 5
     },
-    "network": {
-        "format-wifi": " {signalStrength}%",
-        "format-ethernet": "",
-        "format-disconnected": "睊",
-        "tooltip-format": "{essid}",
-        "on-click": "nm-connection-editor"
-    },
-    "bluetooth": {
-        "format": "",
-        "format-connected": " {device_alias}",
-        "format-disconnected": "",
-        "on-click": "blueman-manager"
-    },
     "backlight": {
         "device": "intel_backlight",
         "format": " {percent}%",
         "on-scroll-up": "brightnessctl set 2%+ && brightnessctl get > /tmp/screen-brightness-save",
         "on-scroll-down": "brightnessctl set 2%- && brightnessctl get > /tmp/screen-brightness-save"
+    },
+    "group/network": {
+        "orientation": "horizontal",
+        "modules": [
+            "network",
+            "bluetooth"
+        ]
+    },
+    "network": {
+        "format-wifi": "",
+        "format-ethernet": "",
+        "format-disconnected": "睊",
+        "tooltip-format": "{essid}  {signalStrength}%",
+        "on-click": "nm-connection-editor"
+    },
+    "bluetooth": {
+        "format": "",
+        "format-connected": "",
+        "format-disconnected": "",
+        "tooltip-format": "{device_alias}",
+        "on-click": "blueman-manager"
+    },
+    "group/system": {
+        "orientation": "horizontal",
+        "modules": [
+            "cpu",
+            "memory"
+        ]
     },
     "cpu": {
         "format": " {usage}%",
@@ -90,43 +108,23 @@
         "interval": 5,
         "tooltip-format": "RAM: {}%"
     },
-    "temperature": {
-        "thermal-zone": 0,
-        "format": "{temperatureC}°C",
-        "interval": 5,
-        "critical-threshold": 80,
-        "format-critical": "{temperatureC}°C"
-    },
     "battery": {
         "format": "{capacity}% {icon}",
         "format-icons": [
-            "",
-            ""
+            "",
+            "",
+            "",
+            "",
+            ""
         ],
         "format-charging": "{capacity}% "
     },
-    "custom/asus-power": {
-        "exec": "/home/santi/.local/bin/asus-power.sh",
-        "interval": 5,
-        "on-click": "rog-control-center",
-        "return-type": "json",
-        "format": "{}"
-    },
-    "custom/asus-profile": {
-        "exec": "/home/santi/.local/bin/asus-profile.sh",
-        "interval": 5,
-        "on-click": "asusctl profile next",
-        "return-type": "json",
-        "format": "{}"
+    "tray": {
+        "spacing": 8
     },
     "custom/power": {
         "format": "⏻",
         "on-click": "bash /home/santi/.config/wlogout/launch.sh",
-        "tooltip": false
-    },
-    "custom/waypaper": {
-        "format": "",
-        "on-click": "waypaper",
         "tooltip": false
     }
 }
