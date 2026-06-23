@@ -1,0 +1,71 @@
+@import "colors.css";
+
+* {
+    background-image: none;
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
+}
+
+window {
+    background-color: transparent;
+}
+
+button {
+    color: @foreground;
+    background-color: alpha(@background, 0.65);
+    border: 1px solid alpha(@foreground, 0.08);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 28%;
+    border-radius: 0px;
+    box-shadow: none;
+    text-shadow: none;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.15s ease-in-out;
+}
+
+button:focus {
+    background-size: 36%;
+}
+
+button:hover {
+    background-color: alpha(@accent, 0.3);
+    border: 1px solid alpha(@accent, 0.4);
+    background-size: 36%;
+    transition: all 0.15s ease-in-out;
+}
+
+#lock {
+    background-image: url("icons/lock.png");
+    border-radius: 14px 0px 0px 14px;
+    margin: 10px 0px 10px 10px;
+}
+
+#logout {
+    background-image: url("icons/logout.png");
+    border-radius: 0px;
+    margin: 10px 0px 10px 0px;
+}
+
+#suspend {
+    background-image: url("icons/suspend.png");
+    border-radius: 0px;
+    margin: 10px 0px 10px 0px;
+}
+
+#shutdown {
+    background-image: url("icons/shutdown.png");
+    border-radius: 0px;
+    margin: 10px 0px 10px 0px;
+}
+
+#hibernate {
+    background-image: url("icons/hibernate.png");
+    border-radius: 0px;
+    margin: 10px 0px 10px 0px;
+}
+
+#reboot {
+    background-image: url("icons/reboot.png");
+    border-radius: 0px 14px 14px 0px;
+    margin: 10px 10px 10px 0px;
+}

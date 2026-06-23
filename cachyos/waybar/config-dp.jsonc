@@ -1,0 +1,116 @@
+{
+    "layer": "top",
+    "output": ["DP-1"],
+    "position": "top",
+    "height": 34,
+    "spacing": 4,
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "custom/asus-profile",
+        "pulseaudio",
+        "network",
+        "backlight",
+        "cpu",
+        "memory",
+        "temperature",
+        "custom/asus-power",
+        "battery",
+        "tray",
+        "custom/waypaper",
+        "custom/power"
+    ],
+    "hyprland/workspaces": {
+        "format": "{icon}"
+    },
+    "clock": {
+        "format": "{:%H:%M  %d/%m/%Y}",
+        "tooltip-format": "<tt>{calendar}</tt>"
+    },
+    "tray": {
+        "spacing": 10
+    },
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-muted": "",
+        "format-icons": {
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "on-click": "pwvucontrol",
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "scroll-step": 5
+    },
+    "network": {
+        "format-wifi": " {signalStrength}%",
+        "format-ethernet": "",
+        "format-disconnected": "睊",
+        "tooltip-format": "{essid}",
+        "on-click": "nm-connection-editor"
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": " {percent}%",
+        "on-scroll-up": "brightnessctl set 2%+ && brightnessctl get > /tmp/screen-brightness-save",
+        "on-scroll-down": "brightnessctl set 2%- && brightnessctl get > /tmp/screen-brightness-save"
+    },
+    "cpu": {
+        "format": " {usage}%",
+        "interval": 3,
+        "tooltip-format": "CPU: {usage}%"
+    },
+    "memory": {
+        "format": " {}%",
+        "interval": 5,
+        "tooltip-format": "RAM: {}%"
+    },
+    "temperature": {
+        "thermal-zone": 0,
+        "format": "{temperatureC}°C",
+        "interval": 5,
+        "critical-threshold": 80,
+        "format-critical": "{temperatureC}°C"
+    },
+    "battery": {
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "format-charging": " {capacity}%",
+        "on-click": "rog-control-center"
+    },
+    "custom/asus-power": {
+        "exec": "/home/santi/.local/bin/asus-power.sh",
+        "interval": 5,
+        "on-click": "rog-control-center",
+        "return-type": "json",
+        "format": "{}"
+    },
+    "custom/asus-profile": {
+        "exec": "/home/santi/.local/bin/asus-profile.sh",
+        "interval": 5,
+        "on-click": "asusctl profile next",
+        "return-type": "json",
+        "format": "{}"
+    },
+    "custom/power": {
+        "format": "⏻",
+        "on-click": "bash /home/santi/.config/wlogout/launch.sh",
+        "tooltip": false
+    },
+    "custom/waypaper": {
+        "format": "",
+        "on-click": "waypaper",
+        "tooltip": false
+    }
+}

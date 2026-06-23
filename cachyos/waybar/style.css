@@ -1,0 +1,74 @@
+@import "colors.css";
+
+* {
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: alpha(@background, 0.6);
+    color: @foreground;
+    border-radius: 12px;
+    margin: 6px 10px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#workspaces button {
+    padding: 0 8px;
+    color: @foreground;
+}
+
+#workspaces button.active {
+    color: @accent;
+}
+
+#clock, #pulseaudio, #network, #bluetooth, #backlight, #battery, #tray,
+#cpu, #memory, #temperature, #custom-asus-profile, #custom-asus-power,
+#custom-power {
+    padding: 0 10px;
+    color: @foreground;
+}
+
+#custom-power:hover {
+    color: @color1;
+}
+
+#custom-waypaper {
+    padding: 0 10px;
+    font-size: 16px;
+}
+
+#battery.warning {
+    color: @color1;
+}
+
+#temperature.critical {
+    color: #f38ba8;
+}
+
+#custom-asus-profile.quiet {
+    color: #a6e3a1;
+}
+
+#custom-asus-profile.balanced {
+    color: #f9e2af;
+}
+
+#custom-asus-profile.performance {
+    color: #f38ba8;
+}
+
+#custom-asus-power.ac {
+    color: @accent;
+}
+
+#custom-asus-power.battery {
+    color: @foreground;
+}
+
+#mpris {
+	padding: 0 10px;
+	color: @foreground;
+	font-size: 13px;
+}

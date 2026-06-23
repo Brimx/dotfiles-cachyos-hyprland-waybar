@@ -1,0 +1,51 @@
+* {
+    font: "JetBrainsMono Nerd Font 12";
+    background: #141311;
+    background-opacity: 0.85;
+    foreground: #E3DFD7;
+    accent: #337A96;
+}
+
+window {
+    width: 400px;
+    location: 2;
+    anchor: north;
+    y-offset: 34;
+    border-radius: 12px;
+    background-color: rgba(20, 19, 17, 0.85);
+    border: 0px;
+    padding: 8px;
+}
+
+mainbox {
+    padding: 0;
+    children: [ inputbar, listview ];
+}
+
+inputbar {
+    padding: 8px 12px;
+    border-radius: 8px;
+    background-color: rgba(227, 223, 215, 0.06);
+    text-color: #E3DFD7;
+    placeholder-color: rgba(227, 223, 215, 0.4);
+}
+
+entry {
+    placeholder-color: rgba(227, 223, 215, 0.4);
+}
+
+listview {
+    spacing: 4px;
+    padding: 4px 0;
+}
+
+element {
+    padding: 8px 12px;
+    border-radius: 8px;
+    text-color: #E3DFD7;
+}
+
+element selected {
+    background-color: rgba(51, 122, 150, 0.4);
+    text-color: #E3DFD7;
+}
