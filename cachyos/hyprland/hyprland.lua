@@ -63,6 +63,10 @@ end)
 
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("XCURSOR_THEME", "Vimix-cursors")
+hl.env("HYPRCURSOR_THEME", "Vimix-cursors")
+hl.env("QT_QPA_PLATFORMTHEME", "qt6ct;qt5ct")
+hl.env("QT_STYLE_OVERRIDE", "kvantum")
 
 
 
@@ -241,6 +245,10 @@ hl.config({
             natural_scroll = true,
         },
     },
+
+    cursor = {
+        enable_hyprcursor = false,
+    },
 })
 
 hl.gesture({
@@ -280,9 +288,9 @@ hl.bind(mainMod .. " + X", hl.dsp.exec_cmd("bash -c '/home/santi/.config/wlogout
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("nwgcc"))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("nwg-displays"))
 hl.bind(mainMod .. " + I", hl.dsp.exec_cmd("rofimoji-grid"))
-hl.bind(mainMod .. " + SHIFT + A", hl.dsp.exec_cmd("hyprshot -m output"))
-hl.bind(mainMod .. " + SHIFT + D", hl.dsp.exec_cmd("hyprshot -m region"))
-hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("hyprshot -m window"))
+hl.bind(mainMod .. " + SHIFT + A", hl.dsp.exec_cmd("hyprshot -m output -o ~/Imágenes/screenshots"))
+hl.bind(mainMod .. " + SHIFT + D", hl.dsp.exec_cmd("hyprshot -m region -o ~/Imágenes/screenshots"))
+hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("hyprshot -m window -o ~/Imágenes/screenshots"))
 hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu | cliphist decode | wl-copy"))
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("normcap"))
 hl.bind(mainMod .. " + F1", hl.dsp.exec_cmd("~/.config/rofi/keybinds_menu.sh"))

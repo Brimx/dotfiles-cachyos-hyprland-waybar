@@ -1,0 +1,51 @@
+{
+    "positionX": "right",
+    "positionY": "top",
+    "control-center-margin-top": 10,
+    "control-center-margin-right": 10,
+    "notification-2fa-action": true,
+    "widgets": [
+        "title",
+        "dnd",
+        "mpris",
+        "volume",
+        "buttons-grid",
+        "notifications"
+    ],
+    "widget-config": {
+        "title": {
+            "text": "Notificaciones",
+            "clear-all-button": true
+        },
+        "dnd": {
+            "text": "No molestar"
+        },
+        "mpris": {
+            "image-size": 36,
+            "image-radius": 8
+        },
+        "buttons-grid": {
+            "actions": [
+                {
+                    "label": "",
+                    "command": "~/.config/wlogout/launch.sh"
+                },
+                {
+                    "label": "",
+                    "command": "systemctl reboot"
+                },
+                {
+                    "label": "",
+                    "command": "hyprlock"
+                },
+                {
+                    "label": "",
+                    "command": "nwg-displays"
+                }
+            ]
+        },
+        "volume": {
+            "label": " Volumen"
+        }
+    }
+}

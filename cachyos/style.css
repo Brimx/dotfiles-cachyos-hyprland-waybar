@@ -1,0 +1,96 @@
+@import "colors.css";
+
+* {
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
+}
+
+.control-center {
+    background: alpha(@background, 0.65);
+    border: 1px solid alpha(@foreground, 0.08);
+    border-radius: 14px;
+    color: @foreground;
+    padding: 10px;
+}
+
+.control-center-list {
+    background: transparent;
+}
+
+.notification {
+    background: alpha(@background, 0.5);
+    border: 1px solid alpha(@foreground, 0.06);
+    border-radius: 12px;
+    margin: 6px;
+    padding: 10px;
+}
+
+.notification:hover {
+    background: alpha(@color0, 0.35);
+    border: 1px solid alpha(@accent, 0.3);
+}
+
+.notification-content {
+    color: @foreground;
+}
+
+.notification-default-action {
+    color: @foreground;
+}
+
+.notification.default {
+    color: @foreground;
+}
+
+.notification.normal {
+    color: @foreground;
+}
+
+.notification.critical {
+    background: alpha(@urgent, 0.15);
+    border: 1px solid alpha(@urgent, 0.3);
+}
+
+.widget-title, .widget-buttons-grid button {
+    color: @foreground;
+    font-weight: bold;
+}
+
+.widget-buttons-grid button {
+    background: alpha(@background, 0.35);
+    border: 1px solid alpha(@foreground, 0.06);
+    border-radius: 10px;
+    padding: 6px 12px;
+    color: @foreground;
+}
+
+.widget-buttons-grid button:hover {
+    background: alpha(@accent, 0.25);
+    border: 1px solid alpha(@accent, 0.3);
+    color: @foreground;
+}
+
+.widget-buttons-grid button.toggle:checked {
+    background: alpha(@accent, 0.35);
+    border: 1px solid @accent;
+}
+
+.widget-volume {
+    background: alpha(@background, 0.35);
+    border: 1px solid alpha(@foreground, 0.06);
+    border-radius: 10px;
+    margin: 6px;
+    padding: 8px;
+    color: @foreground;
+}
+
+.progress-bar {
+    background: alpha(@foreground, 0.08);
+    border-radius: 12px;
+    min-height: 6px;
+    margin: 4px 0;
+}
+
+.progress-bar .progress {
+    background: @accent;
+    border-radius: 12px;
+}
