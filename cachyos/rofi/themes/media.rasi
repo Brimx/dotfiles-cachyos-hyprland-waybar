@@ -1,20 +1,18 @@
+@import "colors-wallust.rasi"
+
 * {
     font: "JetBrainsMono Nerd Font 12";
-    background: #141311;
-    background-opacity: 0.85;
-    foreground: #E3DFD7;
-    accent: #337A96;
 }
 
 window {
-    width: 400px;
+    width: 360px;
     location: 2;
     anchor: north;
-    y-offset: 34;
-    border-radius: 12px;
-    background-color: rgba(20, 19, 17, 0.85);
-    border: 0px;
-    padding: 8px;
+    y-offset: 42;
+    border-radius: 16px;
+    background-color: rgba(20, 19, 17, 0.9);
+    border: 1px solid rgba(227, 223, 215, 0.08);
+    padding: 0;
 }
 
 mainbox {
@@ -23,11 +21,13 @@ mainbox {
 }
 
 inputbar {
-    padding: 8px 12px;
-    border-radius: 8px;
-    background-color: rgba(227, 223, 215, 0.06);
-    text-color: #E3DFD7;
+    padding: 12px 16px;
+    border-radius: 12px;
+    margin: 8px 8px 0 8px;
+    background-color: rgba(227, 223, 215, 0.05);
+    text-color: @foreground;
     placeholder-color: rgba(227, 223, 215, 0.4);
+    font-size: 13px;
 }
 
 entry {
@@ -35,17 +35,26 @@ entry {
 }
 
 listview {
-    spacing: 4px;
-    padding: 4px 0;
+    spacing: 2px;
+    padding: 8px;
 }
 
 element {
-    padding: 8px 12px;
-    border-radius: 8px;
-    text-color: #E3DFD7;
+    padding: 10px 14px;
+    border-radius: 10px;
+    text-color: @foreground;
+    font-size: 14px;
 }
 
 element selected {
-    background-color: rgba(51, 122, 150, 0.4);
-    text-color: #E3DFD7;
+    background-color: rgba(51, 122, 150, 0.3);
+    text-color: @foreground;
+}
+
+element-icon {
+    size: 0;
+}
+
+element-text {
+    vertical-align: 0.5;
 }

@@ -37,11 +37,12 @@
         "format-paused": "{status_icon} <i>{dynamic}</i>",
         "player-stop": "",
         "status-icons": {
-            "playing": "",
+            "playing": "",
             "paused": ""
         },
-        "max-length": 40,
+        "max-length": 18,
         "on-click": "bash /home/santi/.local/bin/rofi-media.sh",
+        "on-click-right": "playerctl play-pause",
         "on-scroll-up": "playerctl next",
         "on-scroll-down": "playerctl previous"
     },
