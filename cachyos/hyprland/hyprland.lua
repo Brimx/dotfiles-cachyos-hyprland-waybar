@@ -52,6 +52,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("bash -c 'R=$(cat /tmp/screen-brightness-save 2>/dev/null || echo 80); brightnessctl set $R% &>/dev/null'")
     hl.exec_cmd("wl-paste --type text --watch cliphist store")
     hl.exec_cmd("wl-paste --type image --watch cliphist store")
+    hl.exec_cmd("bash -c '/home/santi/.local/bin/media-flyout.py daemon &'")
 end)
 
 

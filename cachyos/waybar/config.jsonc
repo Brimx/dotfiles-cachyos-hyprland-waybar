@@ -41,7 +41,7 @@
             "paused": ""
         },
         "max-length": 18,
-        "on-click": "bash /home/santi/.local/bin/rofi-media.sh",
+        "on-click": "/home/santi/.local/bin/media-flyout.py",
         "on-click-right": "playerctl play-pause",
         "on-scroll-up": "playerctl next",
         "on-scroll-down": "playerctl previous"
